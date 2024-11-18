@@ -1,6 +1,6 @@
 [package]
 name = "dolarhoje"
-version = "1.0.1"
+version = "1.0.2"
 edition = "2021"
 authors = ["Jonathan Schweder <jonathanschweder@gmail.com>"]
 license = "MIT"
