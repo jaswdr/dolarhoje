@@ -1,0 +1,18 @@
+[package]
+name = "dolarhoje"
+version = "1.0.1"
+edition = "2021"
+authors = ["Jonathan Schweder <jonathanschweder@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/jaswdr/dolarhoje"
+documentation = "https://docs.rs/dolarhoje/latest/dolarhoje/fn.get.html"
+homepage = "https://github.com/jaswdr/dolarhoje"
+description = """
+Retrieve the value between dolar and brazillian real.
+"""
+categories = ["finance"]
+
+[dependencies]
+regex = "1.11.1"
+reqwest = { version = "0.12.9", features = ["blocking"] }
