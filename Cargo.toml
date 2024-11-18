@@ -1,6 +1,6 @@
 [package]
 name = "dolarhoje"
-version = "1.0.2"
+version = "1.0.3"
 edition = "2021"
 authors = ["Jonathan Schweder <jonathanschweder@gmail.com>"]
 license = "MIT"
@@ -9,7 +9,7 @@ repository = "https://github.com/jaswdr/dolarhoje"
 documentation = "https://docs.rs/dolarhoje/latest/dolarhoje/fn.get.html"
 homepage = "https://github.com/jaswdr/dolarhoje"
 description = """
-Retrieve the value between dolar and brazillian real.
+A lightweight and efficient Rust library designed to fetch the current exchange rate of the US Dollar (USD) against the Brazilian Real (BRL).
 """
 categories = ["finance"]
 
