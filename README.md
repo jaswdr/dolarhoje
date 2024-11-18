@@ -1,7 +1,17 @@
 dolarhoje
 ---
 
-> A lightweight and efficient Rust library designed to fetch the current exchange rate of the US Dollar (USD).
+![](./icon.gif)
+
+> A lightweight and efficient Rust library designed to fetch the current exchange rate of the US Dollar (USD) against the Brazilian Real (BRL).
+
+[![Rust](https://github.com/jaswdr/dolarhoje/actions/workflows/rust.yml/badge.svg)](https://github.com/jaswdr/dolarhoje/actions/workflows/rust.yml)
+
+### Install
+
+```
+cargo add dolarhoje
+```
 
 ### Getting Started
 
