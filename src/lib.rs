@@ -12,22 +12,24 @@ const URL: &str = "https://dolarhoje.com/";
 /// }
 /// ```
 pub fn get() -> Result<f32, &'static str> {
-    let response = reqwest::blocking::get(URL).expect("Unreachable network");
-    let content = response.text().expect("Unable to parse response");
     let re = Regex::new(r"US\$ 1 \(um dólar\)<\/td>      <td>R\$ ([0-9],[0-9]{2})<\/td>").unwrap();
-    if let Some(mat) = re.captures(content.as_str()) {
-        let dolar: f32 = mat
-            .get(1)
-            .expect("Unknown response")
-            .as_str()
-            .replace(",", ".")
-            .parse()
-            .expect("Failed to parse response");
 
-        return Ok(dolar);
+    match reqwest::blocking::get(URL) {
+        Err(_) => Err("Network unreachable"),
+        Ok(response) => match response.text() {
+            Err(_) => Err("Response using wrong format"),
+            Ok(content) => match re.captures(content.as_str()) {
+                None => Err("Invalid response"),
+                Some(mat) => match mat.get(1) {
+                    None => Err("Value not found"),
+                    Some(str) => match str.as_str().replace(",", ".").parse() {
+                        Ok(value) => Ok(value),
+                        Err(_) => Err("Invalid float value"),
+                    },
+                },
+            },
+        },
     }
-
-    Err("Unknown response")
 }
 
 #[cfg(test)]
